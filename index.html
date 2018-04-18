@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HW2</title>
+  
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--  Latest compiled JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="maze.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="panel">
+      <div class="panel-body gameContent">
+        <div class="row">
+          
+          <div class="col-md-6 pull-left gameControls">
+            <div class="row">
+              <div class="col-sm-12 pull-left mazeOptions">
+                <h2>Maze size:</h2>
+                <h5 class="mazeSize" onclick="MyGame.initialize(5,5,120);" >5 by 5</h5>
+                <h5 class="mazeSize" onclick="MyGame.initialize(10,10,60);">10 by 10</h5>
+                <h5 class="mazeSize" onclick="MyGame.initialize(15,15,40);">15 by 15</h5>
+                <h5 class="mazeSize" onclick="MyGame.initialize(20,20,30);">20 by 20</h5>
+              </div>
+              <div class="col-sm-12 pull-left startNewGame hidden">
+                <h2 class='startNewGame'>Start New Game</h2>
+              </div>
+            </div>
+            <div class="row">
+              <h2 class="col-sm-12">Controls:</h2>
+              <div class="col-sm-6">
+                <h5> Move: WASD or JILK </h5>
+                <h5> Hint toggle: H </h5>
+                <h5> Breadcrumbs toggle: B </h5>
+                <h5> Path to finish toggle: P </h5>
+                <h5> Score toggle: Y</h5>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+
+        <div class="col-md-6 pull-left cnvCont ">
+            <canvas id="mazeCanvas" width=600 height=600 style="border:1px solid #000000;"></canvas>
+            <canvas id="spriteCanvas" width=600 height=600 style="border:1px solid #000000;"></canvas>
+            <canvas class="hidden" id="breadCrumbCanvas" width=600 height=600 style="border:1px solid #000000;"></canvas>
+            <canvas class="hidden" id="shortestPathCanvas" width=600 height=600 style="border:1px solid #000000;"></canvas>
+          </div>
+          <div class="col-md-6 pull-left winner hidden">
+        </div> 
+        <div class="row">
+          <h2 class="col-sm-6">High Scores:</h2>
+          
+        </div>
+        <div class="row">
+          <div class="col-sm-6 highScores pull-right">
+            <h4 class="first"></h5>
+            <h4 class="second"></h5>
+            <h4 class="third"><h5>
+          </div>
+        </div>
+        <div class="col-sm-6 showScore hidden pull-right">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
